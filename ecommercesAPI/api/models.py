@@ -15,7 +15,7 @@ class Item(models.Model):
     price = models.FloatField(default=0)
     on_discount = models.BooleanField(default=False)
     discount_price = models.FloatField(blank=True, null=True)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE , related_name="item")
     stock = models.IntegerField(default=0)
     description = models.TextField()
 
